@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intel Sustainability Journey | Timeline</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
+<body>
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <nav class="nav">
+      <div class="logo" aria-label="Intel (text mark)">
+        intel
+      </div>
+      <div class="nav-links">
+        <a href="#timeline">Timeline</a>
+        <a href="#reflections">Reflections</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Sustainability Through the Ages</h1>
+      <p class="subtitle">
+        An interactive timeline showing Intel’s technology evolution and how efficiency and responsible innovation
+        support a more sustainable future—built with HTML, CSS, and Flexbox.
+      </p>
+      <a class="cta" href="#timeline">Scroll to Timeline</a>
+      <p class="microhint">Desktop: horizontal scroll • Mobile: stacked vertical • Hover/focus cards for details</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <header class="section-head">
+        <h2>Intel Technology & Sustainability Timeline</h2>
+        <p>
+          This layout uses Flexbox. On larger screens it scrolls horizontally with scroll-snap.
+          On smaller screens it stacks vertically. Each card reveals details on hover/focus.
+        </p>
+      </header>
+
+      <!-- Track -->
+      <div class="timeline" tabindex="0" aria-label="Scrollable timeline">
+        <!-- 1968 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">1968</span>
+            <h3>Intel Founded</h3>
+          </div>
+          <img class="card-img" src="images/1968.jpg" alt="1960s semiconductor lab scene" />
+          <p class="summary">The company begins its semiconductor journey—setting the stage for decades of innovation.</p>
+          <div class="details">
+            <p>
+              Early advances in semiconductor manufacturing laid the groundwork for smaller, more efficient electronics
+              and the modern performance-per-watt mindset.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1971 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">1971</span>
+            <h3>First Microprocessor Era</h3>
+          </div>
+          <img class="card-img" src="images/1971.jpg" alt="Early microprocessor macro image" />
+          <p class="summary">The microprocessor makes computing more compact—unlocking new efficiency possibilities.</p>
+          <div class="details">
+            <p>
+              Integrating more logic into a smaller chip helped reduce hardware complexity while improving capability—
+              a long-term driver of energy efficiency.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1978 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">1978</span>
+            <h3>8086 Architecture</h3>
+          </div>
+          <img class="card-img" src="images/1978.jpg" alt="Classic chip on motherboard" />
+          <p class="summary">Architectural leaps support scalable computing and influence efficiency trends over time.</p>
+          <div class="details">
+            <p>
+              Better architectures help systems do more work faster, and over time the industry pushes for higher
+              output without proportional energy growth.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1993 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">1993</span>
+            <h3>Pentium Era PCs</h3>
+          </div>
+          <img class="card-img" src="images/1993.jpg" alt="1990s desktop computer setup" />
+          <p class="summary">Mainstream computing expands—optimization and efficiency become increasingly important.</p>
+          <div class="details">
+            <p>
+              As computers became ubiquitous, efficiency affected costs and impact at scale, pushing smarter
+              hardware/software optimization.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2006 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">2006</span>
+            <h3>Performance per Watt Focus</h3>
+          </div>
+          <img class="card-img" src="images/2006.jpg" alt="Modern CPU macro image" />
+          <p class="summary">Energy-efficient design becomes critical for laptops, servers, and data centers.</p>
+          <div class="details">
+            <p>
+              Improving performance-per-watt helps reduce power and cooling needs—especially in large-scale computing
+              environments.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2013 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">2013</span>
+            <h3>Water & Waste Initiatives</h3>
+          </div>
+          <img class="card-img" src="images/2013.jpg" alt="High-tech manufacturing with water recycling systems" />
+          <p class="summary">Operational sustainability grows: conserving water, reducing waste, improving processes.</p>
+          <div class="details">
+            <p>
+              Manufacturing efficiency—including water stewardship and waste reduction—plays a major role in lowering
+              overall footprint.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2020 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">2020</span>
+            <h3>Renewables + Computing</h3>
+          </div>
+          <img class="card-img" src="images/2020.jpg" alt="Renewable energy powering a data center" />
+          <p class="summary">Scaling renewable energy supports lower-emission operations.</p>
+          <div class="details">
+            <p>
+              Renewable electricity reduces operational emissions—important for energy-intensive computing and
+              manufacturing ecosystems.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2030 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">2030</span>
+            <h3>2030 Sustainability Goals</h3>
+          </div>
+          <img class="card-img" src="images/2030.jpg" alt="Near-future sustainable infrastructure" />
+          <p class="summary">Long-range targets focus on emissions reduction and smarter, cleaner innovation.</p>
+          <div class="details">
+            <p>
+              2030-style goals often include lowering greenhouse gases, improving circular practices, and measuring
+              progress transparently.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2040 -->
+        <article class="card" tabindex="0">
+          <div class="card-top">
+            <span class="year">2040</span>
+            <h3>Toward Net-Zero</h3>
+          </div>
+          <img class="card-img" src="images/2040.jpg" alt="Net-zero future concept" />
+          <p class="summary">Net-zero pathways depend on clean power, innovation, and accountability.</p>
+          <div class="details">
+            <p>
+              A net-zero future combines renewable energy, process innovation, supplier collaboration, and continuous
+              improvement to reduce long-term impact.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <p class="helper"><strong>Tip:</strong> Use DevTools responsive mode to test multiple screen sizes.</p>
+    </section>
+
+    <!-- REFLECTIONS -->
+    <section id="reflections" class="section">
+      <header class="section-head">
+        <h2>Reflections</h2>
+        <p>Copy/paste these into your submission doc if needed.</p>
+      </header>
+
+      <div class="grid">
+        <article class="box">
+          <h3>2) Reflect on the process</h3>
+          <p>
+            The hardest part was building one timeline that scrolls horizontally on desktop but stacks vertically on
+            mobile without breaking spacing. I solved it using Flexbox, adding overflow-x for desktop scrolling, and
+            switching to column layout in a media query. I was surprised by how much polish scroll-snap and hover
+            transitions added. I used AI to brainstorm layout/styling and to troubleshoot CSS issues by testing in
+            DevTools and iterating until the UI matched the rubric.
+          </p>
+        </article>
+
+        <article class="box">
+          <h3>3) Networking talking points</h3>
+          <ul>
+            <li>Responsive timeline: horizontal desktop, vertical mobile (Flexbox + media queries).</li>
+            <li>Interactive cards: details revealed on hover/focus for clean UX.</li>
+            <li>Scroll snap + subtle transforms for a modern feel.</li>
+            <li>Deployed on GitHub Pages and verified the live link in incognito.</li>
+          </ul>
+        </article>
+
+        <article class="box">
+          <h3>4) Intel culture + tie to my goals</h3>
+          <p>
+            Intel’s culture of measurable sustainability goals and continuous improvement stood out. That mindset
+            matches how I want to work in IT/software—building reliable systems, testing them, and iterating for
+            better performance and efficiency. I’m motivated by environments that balance innovation with
+            responsibility and long-term impact.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Built with HTML + CSS + Flexbox • LevelUps: Scroll Snap, Transforms, Custom Images</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </main>
+</body>
+</html>
