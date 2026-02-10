@@ -65,8 +65,6 @@
 
           <div class="d-flex flex-wrap gap-2">
             <a class="btn btn-intel" href="#timeline" data-i18n="heroCta">View Timeline</a>
-
-            <!-- Optional Bootstrap interactivity (modal) -->
             <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#learnModal"
                     data-i18n="heroModalBtn">
               Learn about RISE
@@ -90,17 +88,25 @@
 
   <main id="main">
 
-    <!-- TIMELINE -->
+    <!-- TIMELINE (MOVING / SCROLLING) -->
     <section id="timeline" class="section">
       <div class="container">
-        <div class="mb-4">
-          <h2 class="h3 fw-bold mb-1" data-i18n="timelineTitle">Intel Technology Timeline</h2>
-          <p class="text-muted mb-0" data-i18n="timelineSubtitle">Key milestones in innovation and sustainability.</p>
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="h3 fw-bold mb-1" data-i18n="timelineTitle">Intel Technology Timeline</h2>
+            <p class="text-muted mb-0" data-i18n="timelineSubtitle">Key milestones in innovation and sustainability.</p>
+          </div>
+
+          <div class="timeline-controls" aria-label="Timeline controls">
+            <button class="btn btn-outline-primary btn-sm" type="button" id="tlPrev" data-i18n="prevBtn">Prev</button>
+            <button class="btn btn-outline-primary btn-sm" type="button" id="tlNext" data-i18n="nextBtn">Next</button>
+          </div>
         </div>
 
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+        <div class="timeline-wrap" role="region" aria-label="Scrollable timeline">
+          <div class="timeline-scroller" id="timelineScroller" tabindex="0">
+
+            <article class="timeline-card card">
               <img src="images/1968.png" class="card-img-top" alt="Intel early days">
               <div class="card-body">
                 <span class="badge text-bg-primary">1968</span>
@@ -111,10 +117,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/1971.png" class="card-img-top" alt="First microprocessor">
               <div class="card-body">
                 <span class="badge text-bg-primary">1971</span>
@@ -125,10 +129,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/1978.png" class="card-img-top" alt="8086 processor">
               <div class="card-body">
                 <span class="badge text-bg-primary">1978</span>
@@ -139,10 +141,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/1993.png" class="card-img-top" alt="1990s computing">
               <div class="card-body">
                 <span class="badge text-bg-primary">1993</span>
@@ -153,10 +153,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/2006.png" class="card-img-top" alt="Modern CPU design">
               <div class="card-body">
                 <span class="badge text-bg-primary">2006</span>
@@ -167,10 +165,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/2013.png" class="card-img-top" alt="Sustainable manufacturing">
               <div class="card-body">
                 <span class="badge text-bg-primary">2013</span>
@@ -181,10 +177,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/2020.png" class="card-img-top" alt="Renewable energy and computing">
               <div class="card-body">
                 <span class="badge text-bg-primary">2020</span>
@@ -195,10 +189,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/2030.png" class="card-img-top" alt="Future sustainability">
               <div class="card-body">
                 <span class="badge text-bg-primary">2030</span>
@@ -209,10 +201,8 @@
                 </p>
               </div>
             </article>
-          </div>
 
-          <div class="col-md-6 col-lg-4">
-            <article class="card h-100">
+            <article class="timeline-card card">
               <img src="images/2040.png" class="card-img-top" alt="Net zero future">
               <div class="card-body">
                 <span class="badge text-bg-primary">2040</span>
@@ -223,6 +213,7 @@
                 </p>
               </div>
             </article>
+
           </div>
         </div>
       </div>
