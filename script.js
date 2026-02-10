@@ -7,11 +7,15 @@ const langSelect = document.getElementById("langSelect");
 const htmlEl = document.documentElement;
 const bsCss = document.getElementById("bsCss");
 
+// Timeline controls
+const scroller = document.getElementById("timelineScroller");
+const tlPrev = document.getElementById("tlPrev");
+const tlNext = document.getElementById("tlNext");
+
 // ----- RTL LANGS -----
 const rtlLangs = new Set(["ar","fa","ur","he"]);
 
 // ----- TRANSLATIONS -----
-// Add more keys if you add more data-i18n in HTML.
 const i18n = {
   en: {
     skipLink:"Skip to main content",
@@ -29,6 +33,8 @@ const i18n = {
     heroCard3:"Accessible newsletter form",
     timelineTitle:"Intel Technology Timeline",
     timelineSubtitle:"Key milestones in innovation and sustainability.",
+    prevBtn:"Prev",
+    nextBtn:"Next",
     t1968Title:"Intel Founded",
     t1968Summary:"The beginning of semiconductor innovation.",
     t1968Details:"Intel’s founding marked the start of modern microelectronics and paved the way for energy-efficient computing.",
@@ -96,6 +102,8 @@ const i18n = {
     heroCard3:"Formulario accesible",
     timelineTitle:"Cronología tecnológica de Intel",
     timelineSubtitle:"Hitos clave en innovación y sostenibilidad.",
+    prevBtn:"Anterior",
+    nextBtn:"Siguiente",
     t1968Title:"Intel se funda",
     t1968Summary:"El inicio de la innovación en semiconductores.",
     t1968Details:"La fundación de Intel marcó el comienzo de la microelectrónica moderna y abrió camino a una computación más eficiente.",
@@ -163,6 +171,8 @@ const i18n = {
     heroCard3:"Formulaire accessible",
     timelineTitle:"Chronologie technologique d’Intel",
     timelineSubtitle:"Étapes clés en innovation et durabilité.",
+    prevBtn:"Précédent",
+    nextBtn:"Suivant",
     t1968Title:"Fondation d’Intel",
     t1968Summary:"Le début de l’innovation en semi-conducteurs.",
     t1968Details:"La création d’Intel a lancé la microélectronique moderne et a favorisé une informatique plus efficace.",
@@ -230,6 +240,8 @@ const i18n = {
     heroCard3:"نموذج اشتراك متاح",
     timelineTitle:"الخط الزمني لتقنيات Intel",
     timelineSubtitle:"محطات رئيسية في الابتكار والاستدامة.",
+    prevBtn:"السابق",
+    nextBtn:"التالي",
     t1968Title:"تأسيس Intel",
     t1968Summary:"بداية الابتكار في أشباه الموصلات.",
     t1968Details:"شكّل تأسيس Intel انطلاقة للإلكترونيات الدقيقة الحديثة ومهّد لحوسبة أكثر كفاءة.",
@@ -285,7 +297,6 @@ const i18n = {
 // ----- APPLY TEXT -----
 function applyLanguage(lang) {
   const dict = i18n[lang] || i18n.en;
-
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];
@@ -313,9 +324,32 @@ function setLanguage(lang) {
   if (langSelect) langSelect.value = lang;
 }
 
+// ----- TIMELINE MOVE (Prev/Next) -----
+function getStep() {
+  if (!scroller) return 300;
+  const card = scroller.querySelector(".timeline-card");
+  if (!card) return 300;
+  const style = getComputedStyle(scroller);
+  const gap = parseInt(style.columnGap || style.gap || "14", 10) || 14;
+  return card.getBoundingClientRect().width + gap;
+}
+
+function scrollTimeline(direction) {
+  if (!scroller) return;
+  const step = getStep();
+  const isRTL = htmlEl.dir === "rtl";
+
+  // In RTL, scrolling direction feels reversed, so we flip it
+  const delta = (direction === "next" ? 1 : -1) * step * (isRTL ? -1 : 1);
+
+  scroller.scrollBy({ left: delta, behavior: "smooth" });
+}
+
+if (tlPrev) tlPrev.addEventListener("click", () => scrollTimeline("prev"));
+if (tlNext) tlNext.addEventListener("click", () => scrollTimeline("next"));
+
 // ----- AUTO-DETECT LANGUAGE CHANGES (LEVELUP) -----
-// Detect if user/translator changes <html lang=""> and re-apply layout + text.
-let lastLang = htmlEl.lang || "en";
+let lastLang = (htmlEl.lang || "en").toLowerCase().split("-")[0];
 setInterval(() => {
   const current = (htmlEl.lang || "en").toLowerCase().split("-")[0];
   if (current !== lastLang) {
@@ -326,10 +360,7 @@ setInterval(() => {
 
 // ----- EVENT -----
 if (langSelect) {
-  langSelect.addEventListener("change", (e) => {
-    const lang = e.target.value;
-    setLanguage(lang);
-  });
+  langSelect.addEventListener("change", (e) => setLanguage(e.target.value));
 }
 
 // ----- INIT -----
