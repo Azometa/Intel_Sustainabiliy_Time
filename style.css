@@ -123,7 +123,38 @@ body{
   gap: 8px;
 }
 
-/* Mobile: stack timeline vertically like your old version */
+/* Hover-to-scroll zones (desktop) */
+.timeline-hover-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 64px;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.timeline-hover-zone.left { left: 0; }
+.timeline-hover-zone.right { right: 0; }
+
+.timeline-hover-zone::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition: opacity .15s ease;
+  pointer-events:none;
+}
+
+.timeline-hover-zone.left::after{
+  background: linear-gradient(to right, rgba(0,0,0,.18), rgba(0,0,0,0));
+}
+.timeline-hover-zone.right::after{
+  background: linear-gradient(to left, rgba(0,0,0,.18), rgba(0,0,0,0));
+}
+
+.timeline-wrap:hover .timeline-hover-zone::after{ opacity: 1; }
+
+/* Mobile: stack timeline vertically */
 @media (max-width: 760px){
   .timeline-scroller{
     flex-direction: column;
@@ -134,6 +165,7 @@ body{
     min-width: 100%;
     max-width: 100%;
   }
+  .timeline-hover-zone{ display:none; }
 }
 
 /* Feature icons */
