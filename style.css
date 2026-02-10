@@ -26,7 +26,6 @@ body{
   line-height: 1.55;
 }
 
-/* Skip link */
 .skip-link{
   position: absolute;
   top: 0; left: 0;
@@ -39,7 +38,6 @@ body{
 }
 .skip-link:focus{ transform: translateY(0); }
 
-/* HERO */
 .hero{
   position: relative;
   background: url("images/Hero.png") center/cover no-repeat;
@@ -50,7 +48,7 @@ body{
   content:"";
   position:absolute; inset:0;
   background:
-    linear-gradient(110deg, rgba(0,104,181,0.78), rgba(0,74,134,0.62)),
+    linear-gradient(110deg, rgba(0,104,181,0.80), rgba(0,74,134,0.62)),
     radial-gradient(900px 420px at 20% 15%, rgba(0,199,253,0.22), transparent 60%);
 }
 .hero > *{ position: relative; z-index: 1; }
@@ -66,11 +64,14 @@ body{
   letter-spacing: .02em;
 }
 
-/* Make nav readable and spaced */
 .navbar .nav-link{ font-weight: 650; opacity: .95; }
 .navbar .nav-link:hover{ opacity: 1; text-decoration: underline; }
 
-/* Hero side card */
+.lang-select{
+  min-width: 150px;
+  border-radius: 999px;
+}
+
 .hero-card{
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.28);
@@ -86,7 +87,6 @@ body{
   border-bottom: 1px solid rgba(0,104,181,0.10);
 }
 
-/* Buttons */
 .btn-intel{
   --bs-btn-bg: var(--intel-cyan);
   --bs-btn-border-color: var(--intel-cyan);
@@ -97,13 +97,13 @@ body{
   font-weight: 800;
   border-radius: 999px;
 }
+
 .btn-outline-primary,
 .btn-outline-light{
   border-radius: 999px;
   font-weight: 700;
 }
 
-/* Cards — FORCE white cards (fixes your “dark blocks”) */
 .card{
   background: var(--surface) !important;
   color: var(--ink) !important;
@@ -117,7 +117,6 @@ body{
   object-fit: cover;
 }
 
-/* Timeline hover polish */
 #timeline .card{
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
@@ -127,10 +126,8 @@ body{
   border-color: rgba(0,104,181,0.25);
 }
 
-/* Badge color */
 .badge.text-bg-primary{ background: var(--intel-blue) !important; }
 
-/* 3-column icons */
 .icon-wrap{
   width: 46px; height: 46px;
   border-radius: 14px;
@@ -142,9 +139,11 @@ body{
 }
 .icon-wrap i{ font-size: 1.35rem; color: var(--intel-blue); }
 
-/* Form readability */
 form.card{ background: #fff !important; }
-.form-label, .form-check-label, legend{ color: var(--ink) !important; font-weight: 650; }
+.form-label, .form-check-label, legend{
+  color: var(--ink) !important;
+  font-weight: 650;
+}
 .form-control{
   background: #fff !important;
   color: var(--ink) !important;
@@ -157,7 +156,6 @@ form.card{ background: #fff !important; }
 }
 .text-muted{ color: var(--muted) !important; }
 
-/* Footer */
 .footer{
   background: #0b1220;
   color: rgba(255,255,255,0.88);
@@ -168,10 +166,10 @@ form.card{ background: #fff !important; }
 }
 .footer a:hover{ color:#fff; text-decoration: underline; }
 
-/* Accessibility focus ring */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible{
+input:focus-visible,
+select:focus-visible{
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
