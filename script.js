@@ -324,7 +324,26 @@ function setLanguage(lang) {
   if (langSelect) langSelect.value = lang;
 }
 
-// ----- TIMELINE MOVE (Prev/Next) -----
+// ----- FORM VALIDATION (Simple) -----
+const form = document.getElementById("subForm");
+const status = document.getElementById("status");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    status.textContent = "";
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      status.textContent = "Please fix the highlighted fields and try again.";
+      return;
+    }
+    form.classList.add("was-validated");
+    status.textContent = "Thanks! You’re subscribed (demo).";
+    form.reset();
+    form.classList.remove("was-validated");
+  });
+}
+
+// ----- TIMELINE MOVE (Prev/Next + Hover Auto-Scroll) -----
 function getStep() {
   if (!scroller) return 300;
   const card = scroller.querySelector(".timeline-card");
@@ -334,19 +353,67 @@ function getStep() {
   return card.getBoundingClientRect().width + gap;
 }
 
-function scrollTimeline(direction) {
+function scrollTimeline(direction, px = null) {
   if (!scroller) return;
-  const step = getStep();
   const isRTL = htmlEl.dir === "rtl";
-
-  // In RTL, scrolling direction feels reversed, so we flip it
-  const delta = (direction === "next" ? 1 : -1) * step * (isRTL ? -1 : 1);
-
+  const step = px ?? getStep();
+  const base = (direction === "right" ? 1 : -1) * step;
+  const delta = isRTL ? -base : base;
   scroller.scrollBy({ left: delta, behavior: "smooth" });
 }
 
-if (tlPrev) tlPrev.addEventListener("click", () => scrollTimeline("prev"));
-if (tlNext) tlNext.addEventListener("click", () => scrollTimeline("next"));
+// Buttons
+if (tlPrev) tlPrev.addEventListener("click", () => scrollTimeline("left"));
+if (tlNext) tlNext.addEventListener("click", () => scrollTimeline("right"));
+
+// Hover auto-scroll (desktop)
+let hoverRAF = null;
+let hoverDir = 0; // -1 left, +1 right
+const HOVER_SPEED = 5;
+
+function hoverLoop() {
+  if (!scroller || hoverDir === 0) return;
+
+  const isRTL = htmlEl.dir === "rtl";
+  const base = hoverDir * HOVER_SPEED;
+  const delta = isRTL ? -base : base;
+
+  scroller.scrollLeft += delta;
+  hoverRAF = requestAnimationFrame(hoverLoop);
+}
+
+function startHover(dir) {
+  hoverDir = dir;
+  if (hoverRAF) cancelAnimationFrame(hoverRAF);
+  hoverRAF = requestAnimationFrame(hoverLoop);
+}
+
+function stopHover() {
+  hoverDir = 0;
+  if (hoverRAF) cancelAnimationFrame(hoverRAF);
+  hoverRAF = null;
+}
+
+const wrap = document.querySelector(".timeline-wrap");
+if (wrap) {
+  const leftZone = wrap.querySelector(".timeline-hover-zone.left");
+  const rightZone = wrap.querySelector(".timeline-hover-zone.right");
+
+  if (leftZone) {
+    leftZone.addEventListener("mouseenter", () => startHover(-1));
+    leftZone.addEventListener("mouseleave", stopHover);
+  }
+  if (rightZone) {
+    rightZone.addEventListener("mouseenter", () => startHover(1));
+    rightZone.addEventListener("mouseleave", stopHover);
+  }
+}
+
+// Stop hover if user scrolls/touches
+if (scroller) {
+  scroller.addEventListener("wheel", stopHover, { passive: true });
+  scroller.addEventListener("touchstart", stopHover, { passive: true });
+}
 
 // ----- AUTO-DETECT LANGUAGE CHANGES (LEVELUP) -----
 let lastLang = (htmlEl.lang || "en").toLowerCase().split("-")[0];
