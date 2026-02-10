@@ -1,8 +1,7 @@
 :root{
   --intel-blue:#0068B5;
   --intel-blue-2:#0b5ea8;
-  --bg:#0a1020;
-  --card:#ffffff;
+  --bg:#f6f8fb;
   --text:#0b1220;
 }
 
@@ -11,7 +10,7 @@
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #f6f8fb;
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -70,14 +69,10 @@ body{
   color:#fff;
 }
 
-.lang-select{
-  min-width: 140px;
-}
+.lang-select{ min-width: 140px; }
 
 /* Sections */
-.section{
-  padding: 56px 0;
-}
+.section{ padding: 56px 0; }
 .section-alt{
   background:#ffffff;
   border-top: 1px solid rgba(0,0,0,.06);
@@ -96,6 +91,51 @@ body{
   object-fit: cover;
 }
 
+/* Timeline (moving) */
+.timeline-wrap{
+  position: relative;
+}
+
+.timeline-scroller{
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 10px 4px 18px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-scroller:focus{
+  outline: 3px solid rgba(0,104,181,.35);
+  outline-offset: 6px;
+  border-radius: 14px;
+}
+
+.timeline-card{
+  min-width: 290px;
+  max-width: 290px;
+  scroll-snap-align: start;
+}
+
+.timeline-controls{
+  display: flex;
+  gap: 8px;
+}
+
+/* Mobile: stack timeline vertically like your old version */
+@media (max-width: 760px){
+  .timeline-scroller{
+    flex-direction: column;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+  }
+  .timeline-card{
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* Feature icons */
 .icon-wrap{
   width:44px; height:44px;
@@ -108,14 +148,10 @@ body{
   margin-bottom: 10px;
 }
 
-.learnmore{
-  border-radius: 999px;
-}
+.learnmore{ border-radius: 999px; }
 
 /* Footer */
 .footer{
   background: #061225;
   color:#fff;
-}
-  outline-offset: 2px;
 }
