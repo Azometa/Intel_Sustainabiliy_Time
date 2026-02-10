@@ -88,7 +88,7 @@
 
   <main id="main">
 
-    <!-- TIMELINE (MOVING / SCROLLING) -->
+    <!-- TIMELINE (MOVING / HOVER SCROLL) -->
     <section id="timeline" class="section">
       <div class="container">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
@@ -104,6 +104,9 @@
         </div>
 
         <div class="timeline-wrap" role="region" aria-label="Scrollable timeline">
+          <div class="timeline-hover-zone left" aria-hidden="true"></div>
+          <div class="timeline-hover-zone right" aria-hidden="true"></div>
+
           <div class="timeline-scroller" id="timelineScroller" tabindex="0">
 
             <article class="timeline-card card">
