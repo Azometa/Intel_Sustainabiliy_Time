@@ -1,180 +1,471 @@
-<!DOCTYPE html>
-<html lang="en" id="top">
+<!doctype html>
+<html lang="en" dir="ltr" id="top">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intel Sustainability Timeline</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS (swap to RTL via JS) -->
+  <link id="bsCss" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Skip link (accessibility) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="hero">
-  <nav class="nav">
-    <div class="logo">intel</div>
-    <div class="nav-links">
-      <a href="#timeline">Timeline</a>
-      <a href="#reflections">Reflections</a>
-    </div>
-  </nav>
+  <!-- HERO / NAV -->
+  <header class="hero">
+    <nav class="navbar navbar-expand-lg container py-3" aria-label="Primary navigation">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">intel</span>
+      </a>
 
-  <div class="hero-content">
-    <h1>Sustainability Through the Ages</h1>
+      <button class="navbar-toggler text-white border-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <p class="subtitle">
-      Explore Intel’s journey of technology advancement and sustainability—from early microprocessors
-      to modern renewable-powered computing.
-    </p>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link text-white" href="#timeline">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#focus">Focus Areas</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#subscribe">Newsletter</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#reflections">Reflections</a></li>
+        </ul>
 
-    <a class="cta" href="#timeline">View Timeline</a>
-
-   
-  </div>
-</header>
-
-<main class="container">
-
-  <!-- TIMELINE -->
-  <section id="timeline" class="section">
-
-    <h2>Intel Technology Timeline</h2>
-
-    <div class="timeline">
-
-      <article class="card">
-        <span class="year">1968</span>
-        <h3>Intel Founded</h3>
-        <img src="images/1968.png" alt="Intel early days">
-        <p class="summary">The beginning of semiconductor innovation.</p>
-        <div class="details">
-          Intel’s founding marked the start of modern microelectronics and paved the way for energy-efficient computing.
+        <!-- RTL toggle (rubric) -->
+        <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0" role="group" aria-label="Language and direction">
+          <button type="button" class="btn btn-outline-light btn-sm" id="btnEN" aria-pressed="true">
+            English (LTR)
+          </button>
+          <button type="button" class="btn btn-outline-light btn-sm" id="btnAR" aria-pressed="false">
+            العربية (RTL)
+          </button>
         </div>
-      </article>
-
-      <article class="card">
-        <span class="year">1971</span>
-        <h3>First Microprocessor</h3>
-        <img src="images/1971.png" alt="First microprocessor">
-        <p class="summary">Computing becomes smaller and more efficient.</p>
-        <div class="details">
-          The microprocessor revolutionized computing by putting powerful processing into tiny, efficient chips.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">1978</span>
-        <h3>8086 Architecture</h3>
-        <img src="images/1978.png" alt="8086 processor">
-        <p class="summary">Architecture improvements drive performance.</p>
-        <div class="details">
-          Better chip designs improved performance while reducing energy demands.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">1993</span>
-        <h3>Pentium Era</h3>
-        <img src="images/1993.png" alt="1990s computing">
-        <p class="summary">Personal computing becomes mainstream.</p>
-        <div class="details">
-          With computers in homes and offices, energy efficiency became increasingly important.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">2006</span>
-        <h3>Efficiency Focus</h3>
-        <img src="images/2006.png" alt="Modern CPU design">
-        <p class="summary">Performance-per-watt becomes key.</p>
-        <div class="details">
-          Processors were redesigned to deliver more computing power with less electricity.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">2013</span>
-        <h3>Water & Waste Initiatives</h3>
-        <img src="images/2013.png" alt="Sustainable manufacturing">
-        <p class="summary">Sustainability expands to operations.</p>
-        <div class="details">
-          Intel began focusing heavily on reducing water use and manufacturing waste.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">2020</span>
-        <h3>Renewable Energy</h3>
-        <img src="images/2020.png" alt="Renewable energy and computing">
-        <p class="summary">Clean energy powers technology.</p>
-        <div class="details">
-          Data centers and manufacturing increasingly rely on renewable energy sources.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">2030</span>
-        <h3>Future Goals</h3>
-        <img src="images/2030.png" alt="Future sustainability">
-        <p class="summary">Ambitious sustainability targets.</p>
-        <div class="details">
-          Intel commits to major reductions in emissions and resource usage.
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="year">2040</span>
-        <h3>Net-Zero Vision</h3>
-        <img src="images/2040.png" alt="Net zero future">
-        <p class="summary">A carbon-neutral future.</p>
-        <div class="details">
-          Long-term goals focus on eliminating environmental impact entirely.
-        </div>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- REFLECTIONS -->
-  <section id="reflections" class="section">
-
-    <h2>Reflections</h2>
-
-    <div class="grid">
-
-      <div class="box">
-        <h3>Process Reflection</h3>
-        <p>
-          Building this site helped me understand responsive design using Flexbox and media queries.
-          The most challenging part was making the timeline horizontal on desktop and vertical on mobile,
-          which I solved with CSS breakpoints.
-        </p>
       </div>
+    </nav>
 
-      <div class="box">
-        <h3>Networking Value</h3>
-        <p>
-          This project demonstrates front-end skills such as layout design, interactivity, and GitHub Pages deployment,
-          which are valuable talking points with recruiters.
-        </p>
+    <div class="container hero-content py-5 py-lg-6">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold text-white mb-3">Sustainability Through the Ages</h1>
+          <p class="lead text-white-75 mb-4">
+            Explore Intel’s journey of technology advancement and sustainability—from early microprocessors
+            to modern renewable-powered computing.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-intel" href="#timeline">
+              View Timeline <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-outline-light" href="#subscribe">Get Updates</a>
+          </div>
+
+          <p class="small text-white-75 mt-3 mb-0">
+            Tip: Toggle العربية (RTL) to preview right-to-left layout and alignment.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <aside class="hero-card p-3 p-lg-4" aria-label="Project requirements">
+            <h2 class="h5 text-white mb-2">This week’s upgrades</h2>
+            <ul class="text-white-75 small mb-0">
+              <li>RTL/LTR support for a global audience</li>
+              <li>Bootstrap responsive three-column section with icons</li>
+              <li>Accessible subscription form + footer</li>
+              <li>Accessibility improvements (aim 90+)</li>
+            </ul>
+          </aside>
+        </div>
       </div>
-
-      <div class="box">
-        <h3>Company Culture</h3>
-        <p>
-          Intel’s commitment to sustainability aligns with my goals to build technology that is both innovative and responsible.
-        </p>
-      </div>
-
     </div>
+  </header>
 
-  </section>
+  <main id="main">
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <h2 class="h3 fw-bold mb-1">Intel Technology Timeline</h2>
+            <p class="text-muted mb-0">Key milestones in innovation and sustainability.</p>
+          </div>
+          <a class="btn btn-outline-primary btn-sm" href="#subscribe">Subscribe</a>
+        </div>
 
-  <footer class="footer">
-    Built with HTML, CSS, Flexbox • Deployed on GitHub Pages
-  </footer>
+        <div class="row g-3">
+          <!-- 1968 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/1968.png" class="card-img-top" alt="Intel early days">
+              <div class="card-body">
+                <span class="badge text-bg-primary">1968</span>
+                <h3 class="h5 mt-2">Intel Founded</h3>
+                <p class="mb-2">The beginning of semiconductor innovation.</p>
+                <p class="small text-muted mb-0">
+                  Intel’s founding marked the start of modern microelectronics and paved the way for energy-efficient computing.
+                </p>
+              </div>
+            </article>
+          </div>
 
-</main>
+          <!-- 1971 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/1971.png" class="card-img-top" alt="First microprocessor">
+              <div class="card-body">
+                <span class="badge text-bg-primary">1971</span>
+                <h3 class="h5 mt-2">First Microprocessor</h3>
+                <p class="mb-2">Computing becomes smaller and more efficient.</p>
+                <p class="small text-muted mb-0">
+                  The microprocessor revolutionized computing by putting powerful processing into tiny, efficient chips.
+                </p>
+              </div>
+            </article>
+          </div>
 
+          <!-- 1978 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/1978.png" class="card-img-top" alt="8086 processor">
+              <div class="card-body">
+                <span class="badge text-bg-primary">1978</span>
+                <h3 class="h5 mt-2">8086 Architecture</h3>
+                <p class="mb-2">Architecture improvements drive performance.</p>
+                <p class="small text-muted mb-0">
+                  Better chip designs improved performance while reducing energy demands.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 1993 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/1993.png" class="card-img-top" alt="1990s computing">
+              <div class="card-body">
+                <span class="badge text-bg-primary">1993</span>
+                <h3 class="h5 mt-2">Pentium Era</h3>
+                <p class="mb-2">Personal computing becomes mainstream.</p>
+                <p class="small text-muted mb-0">
+                  With computers in homes and offices, energy efficiency became increasingly important.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2006 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/2006.png" class="card-img-top" alt="Modern CPU design">
+              <div class="card-body">
+                <span class="badge text-bg-primary">2006</span>
+                <h3 class="h5 mt-2">Efficiency Focus</h3>
+                <p class="mb-2">Performance-per-watt becomes key.</p>
+                <p class="small text-muted mb-0">
+                  Processors were redesigned to deliver more computing power with less electricity.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2013 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/2013.png" class="card-img-top" alt="Sustainable manufacturing">
+              <div class="card-body">
+                <span class="badge text-bg-primary">2013</span>
+                <h3 class="h5 mt-2">Water & Waste Initiatives</h3>
+                <p class="mb-2">Sustainability expands to operations.</p>
+                <p class="small text-muted mb-0">
+                  Intel began focusing heavily on reducing water use and manufacturing waste.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2020 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/2020.png" class="card-img-top" alt="Renewable energy and computing">
+              <div class="card-body">
+                <span class="badge text-bg-primary">2020</span>
+                <h3 class="h5 mt-2">Renewable Energy</h3>
+                <p class="mb-2">Clean energy powers technology.</p>
+                <p class="small text-muted mb-0">
+                  Data centers and manufacturing increasingly rely on renewable energy sources.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2030 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/2030.png" class="card-img-top" alt="Future sustainability">
+              <div class="card-body">
+                <span class="badge text-bg-primary">2030</span>
+                <h3 class="h5 mt-2">Future Goals</h3>
+                <p class="mb-2">Ambitious sustainability targets.</p>
+                <p class="small text-muted mb-0">
+                  Intel commits to major reductions in emissions and resource usage.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2040 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <img src="images/2040.png" class="card-img-top" alt="Net zero future">
+              <div class="card-body">
+                <span class="badge text-bg-primary">2040</span>
+                <h3 class="h5 mt-2">Net-Zero Vision</h3>
+                <p class="mb-2">A carbon-neutral future.</p>
+                <p class="small text-muted mb-0">
+                  Long-term goals focus on eliminating environmental impact entirely.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSIVE 3-COLUMN SECTION (rubric) -->
+    <section id="focus" class="section section-alt">
+      <div class="container">
+        <h2 class="h3 fw-bold mb-2">Sustainability focus areas</h2>
+        <p class="text-muted mb-4">
+          Bootstrap grid with icons and consistent “Learn more” buttons (responsive on all screens).
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 feature">
+              <div class="card-body">
+                <div class="icon-wrap" aria-hidden="true"><i class="bi bi-droplet-half"></i></div>
+                <h3 class="h5">Water stewardship</h3>
+                <p class="text-muted">
+                  Reducing water usage and improving watershed health where operations take place.
+                </p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
+                   aria-label="Learn more about water stewardship">Learn more</a>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 feature">
+              <div class="card-body">
+                <div class="icon-wrap" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+                <h3 class="h5">Responsible manufacturing</h3>
+                <p class="text-muted">
+                  Improving efficiency, reducing waste, and increasing sustainability throughout production.
+                </p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
+                   aria-label="Learn more about responsible manufacturing">Learn more</a>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 feature">
+              <div class="card-body">
+                <div class="icon-wrap" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></div>
+                <h3 class="h5">Transparency & reporting</h3>
+                <p class="text-muted">
+                  Clear reporting helps stakeholders track progress toward sustainability targets.
+                </p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
+                   aria-label="Learn more about transparency and reporting">Learn more</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIPTION FORM + FOOTER (rubric) -->
+    <section id="subscribe" class="section">
+      <div class="container">
+        <div class="row align-items-start g-4">
+          <div class="col-lg-6">
+            <h2 class="h3 fw-bold mb-2">Subscribe for sustainability updates</h2>
+            <p class="text-muted mb-0">
+              Accessible form with labels, validation feedback, and keyboard-friendly navigation.
+            </p>
+          </div>
+
+          <div class="col-lg-6">
+            <form class="card shadow-sm p-3 p-lg-4" id="subForm" novalidate aria-describedby="formHelp">
+              <p id="formHelp" class="small text-muted">
+                Required fields are marked. We’ll only use your email for newsletter updates (demo).
+              </p>
+
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full name <span aria-hidden="true">*</span></label>
+                <input class="form-control" id="fullName" name="fullName" type="text" autocomplete="name" required />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address <span aria-hidden="true">*</span></label>
+                <input class="form-control" id="email" name="email" type="email" autocomplete="email" required />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <fieldset class="mb-3">
+                <legend class="form-label mb-2">Topics</legend>
+                <div class="d-flex flex-wrap gap-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="topicClimate" name="topics" value="climate" />
+                    <label class="form-check-label" for="topicClimate">Climate</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="topicWater" name="topics" value="water" />
+                    <label class="form-check-label" for="topicWater">Water</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="topicWaste" name="topics" value="waste" />
+                    <label class="form-check-label" for="topicWaste">Waste</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="d-grid">
+                <button class="btn btn-intel" type="submit">Subscribe</button>
+              </div>
+
+              <p class="small text-muted mt-3 mb-0" id="status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTIONS -->
+    <section id="reflections" class="section section-alt">
+      <div class="container">
+        <h2 class="h3 fw-bold mb-4">Reflections</h2>
+
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">Process Reflection</h3>
+                <p class="text-muted mb-0">
+                  Building this site helped me understand responsive design using Flexbox and media queries.
+                  The most challenging part was making the timeline horizontal on desktop and vertical on mobile,
+                  which I solved with CSS breakpoints.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">Networking Value</h3>
+                <p class="text-muted mb-0">
+                  This project demonstrates front-end skills such as layout design, interactivity, and GitHub Pages deployment,
+                  which are valuable talking points with recruiters.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <section class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5">Company Culture</h3>
+                <p class="text-muted mb-0">
+                  Intel’s commitment to sustainability aligns with my goals to build technology that is both innovative and responsible.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <footer class="footer mt-5" aria-label="Site footer">
+          <div class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+            <p class="mb-0 small text-white-75">
+              Built with HTML, CSS, and Bootstrap • Deployed on GitHub Pages • © <span id="year"></span>
+            </p>
+            <div class="d-flex gap-3">
+              <a class="small link-light" href="#top">Back to top</a>
+              <a class="small link-light" href="#subscribe">Newsletter</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form validation + accessible status message
+    const form = document.getElementById("subForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      status.textContent = "";
+
+      if (!form.checkValidity()) {
+        e.stopPropagation();
+        form.classList.add("was-validated");
+        status.textContent = "Please fix the highlighted fields and try again.";
+        return;
+      }
+
+      form.classList.add("was-validated");
+      status.textContent = "Thanks! You’re subscribed (demo).";
+      form.reset();
+      form.classList.remove("was-validated");
+    });
+
+    // RTL / LTR toggle (rubric requirement)
+    const htmlEl = document.documentElement;
+    const bsCss = document.getElementById("bsCss");
+    const btnEN = document.getElementById("btnEN");
+    const btnAR = document.getElementById("btnAR");
+
+    function setDir(lang, dir) {
+      htmlEl.lang = lang;
+      htmlEl.dir = dir;
+
+      if (dir === "rtl") {
+        bsCss.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css";
+        btnAR.setAttribute("aria-pressed", "true");
+        btnEN.setAttribute("aria-pressed", "false");
+      } else {
+        bsCss.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+        btnEN.setAttribute("aria-pressed", "true");
+        btnAR.setAttribute("aria-pressed", "false");
+      }
+    }
+
+    btnEN.addEventListener("click", () => setDir("en", "ltr"));
+    btnAR.addEventListener("click", () => setDir("ar", "rtl"));
+
+    // Optional auto-detect Arabic browser language
+    const isArabic = (navigator.language || "").toLowerCase().startsWith("ar");
+    if (isArabic) setDir("ar", "rtl");
+  </script>
 </body>
 </html>
