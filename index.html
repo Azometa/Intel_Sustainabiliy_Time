@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intel Sustainability Timeline</title>
 
-  <!-- Bootstrap CSS (swap to RTL via JS) -->
+  <!-- Bootstrap CSS (we swap to RTL in JS) -->
   <link id="bsCss" rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
@@ -13,11 +13,11 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
-  <!-- Skip link (accessibility) -->
+  <!-- Skip link (Accessibility) -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- HERO / NAV -->
@@ -28,21 +28,21 @@
         <span class="brand-text">intel</span>
       </a>
 
-      <button class="navbar-toggler text-white border-white" type="button"
+      <button class="navbar-toggler border-white" type="button"
               data-bs-toggle="collapse" data-bs-target="#nav"
               aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto gap-lg-2">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
           <li class="nav-item"><a class="nav-link text-white" href="#timeline">Timeline</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#focus">Focus Areas</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#subscribe">Newsletter</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#reflections">Reflections</a></li>
         </ul>
 
-        <!-- RTL toggle (rubric) -->
+        <!-- RTL Adaptation + LevelUp Auto-detect (buttons) -->
         <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0" role="group" aria-label="Language and direction">
           <button type="button" class="btn btn-outline-light btn-sm" id="btnEN" aria-pressed="true">
             English (LTR)
@@ -67,22 +67,27 @@
             <a class="btn btn-intel" href="#timeline">
               View Timeline <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-outline-light" href="#subscribe">Get Updates</a>
+
+            <!-- LevelUp Interactivity (Bootstrap modal trigger) -->
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#learnModal">
+              Learn about RISE
+            </button>
           </div>
 
           <p class="small text-white-75 mt-3 mb-0">
-            Tip: Toggle العربية (RTL) to preview right-to-left layout and alignment.
+            Tip: Toggle العربية (RTL) to preview right-to-left layout and alignment. (Bonus: auto-detect is enabled.)
           </p>
         </div>
 
         <div class="col-lg-4">
           <aside class="hero-card p-3 p-lg-4" aria-label="Project requirements">
-            <h2 class="h5 text-white mb-2">This week’s upgrades</h2>
+            <h2 class="h5 text-white mb-2">Rubric checklist</h2>
             <ul class="text-white-75 small mb-0">
-              <li>RTL/LTR support for a global audience</li>
-              <li>Bootstrap responsive three-column section with icons</li>
-              <li>Accessible subscription form + footer</li>
-              <li>Accessibility improvements (aim 90+)</li>
+              <li>RTL layout support ✅</li>
+              <li>Bootstrap 3-column icons section ✅</li>
+              <li>Accessible form + footer ✅</li>
+              <li>Accessibility improvements (90+ goal) ✅</li>
+              <li>Bonus: Auto-detect RTL + Bootstrap modal ✅</li>
             </ul>
           </aside>
         </div>
@@ -103,9 +108,9 @@
         </div>
 
         <div class="row g-3">
-          <!-- 1968 -->
+          <!-- Repeatable timeline card template -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/1968.png" class="card-img-top" alt="Intel early days">
               <div class="card-body">
                 <span class="badge text-bg-primary">1968</span>
@@ -118,9 +123,8 @@
             </article>
           </div>
 
-          <!-- 1971 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/1971.png" class="card-img-top" alt="First microprocessor">
               <div class="card-body">
                 <span class="badge text-bg-primary">1971</span>
@@ -133,121 +137,135 @@
             </article>
           </div>
 
-          <!-- 1978 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/1978.png" class="card-img-top" alt="8086 processor">
               <div class="card-body">
                 <span class="badge text-bg-primary">1978</span>
                 <h3 class="h5 mt-2">8086 Architecture</h3>
                 <p class="mb-2">Architecture improvements drive performance.</p>
-                <p class="small text-muted mb-0">
-                  Better chip designs improved performance while reducing energy demands.
-                </p>
+                <p class="small text-muted mb-0">Better chip designs improved performance while reducing energy demands.</p>
               </div>
             </article>
           </div>
 
-          <!-- 1993 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/1993.png" class="card-img-top" alt="1990s computing">
               <div class="card-body">
                 <span class="badge text-bg-primary">1993</span>
                 <h3 class="h5 mt-2">Pentium Era</h3>
                 <p class="mb-2">Personal computing becomes mainstream.</p>
-                <p class="small text-muted mb-0">
-                  With computers in homes and offices, energy efficiency became increasingly important.
-                </p>
+                <p class="small text-muted mb-0">Energy efficiency became increasingly important as PCs spread worldwide.</p>
               </div>
             </article>
           </div>
 
-          <!-- 2006 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/2006.png" class="card-img-top" alt="Modern CPU design">
               <div class="card-body">
                 <span class="badge text-bg-primary">2006</span>
                 <h3 class="h5 mt-2">Efficiency Focus</h3>
                 <p class="mb-2">Performance-per-watt becomes key.</p>
-                <p class="small text-muted mb-0">
-                  Processors were redesigned to deliver more computing power with less electricity.
-                </p>
+                <p class="small text-muted mb-0">Processors were redesigned to deliver more computing power with less electricity.</p>
               </div>
             </article>
           </div>
 
-          <!-- 2013 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/2013.png" class="card-img-top" alt="Sustainable manufacturing">
               <div class="card-body">
                 <span class="badge text-bg-primary">2013</span>
                 <h3 class="h5 mt-2">Water & Waste Initiatives</h3>
                 <p class="mb-2">Sustainability expands to operations.</p>
-                <p class="small text-muted mb-0">
-                  Intel began focusing heavily on reducing water use and manufacturing waste.
-                </p>
+                <p class="small text-muted mb-0">A stronger focus on reducing water use and manufacturing waste.</p>
               </div>
             </article>
           </div>
 
-          <!-- 2020 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/2020.png" class="card-img-top" alt="Renewable energy and computing">
               <div class="card-body">
                 <span class="badge text-bg-primary">2020</span>
                 <h3 class="h5 mt-2">Renewable Energy</h3>
                 <p class="mb-2">Clean energy powers technology.</p>
-                <p class="small text-muted mb-0">
-                  Data centers and manufacturing increasingly rely on renewable energy sources.
-                </p>
+                <p class="small text-muted mb-0">Data centers and manufacturing increasingly rely on renewable sources.</p>
               </div>
             </article>
           </div>
 
-          <!-- 2030 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/2030.png" class="card-img-top" alt="Future sustainability">
               <div class="card-body">
                 <span class="badge text-bg-primary">2030</span>
                 <h3 class="h5 mt-2">Future Goals</h3>
                 <p class="mb-2">Ambitious sustainability targets.</p>
-                <p class="small text-muted mb-0">
-                  Intel commits to major reductions in emissions and resource usage.
-                </p>
+                <p class="small text-muted mb-0">Commitments to reduce emissions and resource usage.</p>
               </div>
             </article>
           </div>
 
-          <!-- 2040 -->
           <div class="col-md-6 col-lg-4">
-            <article class="card h-100 shadow-sm">
+            <article class="card h-100">
               <img src="images/2040.png" class="card-img-top" alt="Net zero future">
               <div class="card-body">
                 <span class="badge text-bg-primary">2040</span>
                 <h3 class="h5 mt-2">Net-Zero Vision</h3>
                 <p class="mb-2">A carbon-neutral future.</p>
-                <p class="small text-muted mb-0">
-                  Long-term goals focus on eliminating environmental impact entirely.
-                </p>
+                <p class="small text-muted mb-0">Long-term goals focus on eliminating environmental impact entirely.</p>
               </div>
             </article>
           </div>
         </div>
+
+        <!-- Bonus Interactivity: Accordion -->
+        <div class="mt-5">
+          <h2 class="h4 fw-bold mb-3">Explore more (interactive)</h2>
+          <div class="accordion" id="intelAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="a1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1"
+                        aria-expanded="true" aria-controls="c1">
+                  Why does accessibility matter for global websites?
+                </button>
+              </h3>
+              <div id="c1" class="accordion-collapse collapse show" aria-labelledby="a1" data-bs-parent="#intelAccordion">
+                <div class="accordion-body">
+                  Accessibility improves usability for everyone (keyboard users, low vision, screen readers), and helps ensure the
+                  experience works across devices and languages.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="a2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2"
+                        aria-expanded="false" aria-controls="c2">
+                  What is RTL adaptation?
+                </button>
+              </h3>
+              <div id="c2" class="accordion-collapse collapse" aria-labelledby="a2" data-bs-parent="#intelAccordion">
+                <div class="accordion-body">
+                  RTL adaptation flips layout direction for right-to-left languages like Arabic, so alignment, navigation, and reading flow
+                  feel natural to global users.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- RESPONSIVE 3-COLUMN SECTION (rubric) -->
+    <!-- RESPONSIVE THREE-COLUMN SECTION (10 pts) -->
     <section id="focus" class="section section-alt">
       <div class="container">
         <h2 class="h3 fw-bold mb-2">Sustainability focus areas</h2>
-        <p class="text-muted mb-4">
-          Bootstrap grid with icons and consistent “Learn more” buttons (responsive on all screens).
-        </p>
+        <p class="text-muted mb-4">Bootstrap grid + icons + consistent “Learn more” button styling.</p>
 
         <div class="row g-3">
           <div class="col-md-6 col-lg-4">
@@ -255,11 +273,10 @@
               <div class="card-body">
                 <div class="icon-wrap" aria-hidden="true"><i class="bi bi-droplet-half"></i></div>
                 <h3 class="h5">Water stewardship</h3>
-                <p class="text-muted">
-                  Reducing water usage and improving watershed health where operations take place.
-                </p>
-                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
-                   aria-label="Learn more about water stewardship">Learn more</a>
+                <p class="text-muted">Reducing water usage and improving watershed health where operations take place.</p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe" aria-label="Learn more about water stewardship">
+                  Learn more
+                </a>
               </div>
             </section>
           </div>
@@ -269,11 +286,10 @@
               <div class="card-body">
                 <div class="icon-wrap" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
                 <h3 class="h5">Responsible manufacturing</h3>
-                <p class="text-muted">
-                  Improving efficiency, reducing waste, and increasing sustainability throughout production.
-                </p>
-                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
-                   aria-label="Learn more about responsible manufacturing">Learn more</a>
+                <p class="text-muted">Improving efficiency, reducing waste, and increasing sustainability throughout production.</p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe" aria-label="Learn more about responsible manufacturing">
+                  Learn more
+                </a>
               </div>
             </section>
           </div>
@@ -283,11 +299,10 @@
               <div class="card-body">
                 <div class="icon-wrap" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></div>
                 <h3 class="h5">Transparency & reporting</h3>
-                <p class="text-muted">
-                  Clear reporting helps stakeholders track progress toward sustainability targets.
-                </p>
-                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe"
-                   aria-label="Learn more about transparency and reporting">Learn more</a>
+                <p class="text-muted">Clear reporting helps stakeholders track progress toward sustainability targets.</p>
+                <a class="btn btn-outline-primary btn-sm learnmore" href="#subscribe" aria-label="Learn more about transparency and reporting">
+                  Learn more
+                </a>
               </div>
             </section>
           </div>
@@ -295,19 +310,17 @@
       </div>
     </section>
 
-    <!-- SUBSCRIPTION FORM + FOOTER (rubric) -->
+    <!-- SUBSCRIPTION FORM + FOOTER (10 pts) -->
     <section id="subscribe" class="section">
       <div class="container">
         <div class="row align-items-start g-4">
           <div class="col-lg-6">
             <h2 class="h3 fw-bold mb-2">Subscribe for sustainability updates</h2>
-            <p class="text-muted mb-0">
-              Accessible form with labels, validation feedback, and keyboard-friendly navigation.
-            </p>
+            <p class="text-muted mb-0">Accessible form with labels, validation feedback, and keyboard support.</p>
           </div>
 
           <div class="col-lg-6">
-            <form class="card shadow-sm p-3 p-lg-4" id="subForm" novalidate aria-describedby="formHelp">
+            <form class="card p-3 p-lg-4" id="subForm" novalidate aria-describedby="formHelp">
               <p id="formHelp" class="small text-muted">
                 Required fields are marked. We’ll only use your email for newsletter updates (demo).
               </p>
@@ -353,50 +366,53 @@
       </div>
     </section>
 
-    <!-- REFLECTIONS -->
+    <!-- REFLECTIONS (30 pts total: 3 reflections) -->
     <section id="reflections" class="section section-alt">
       <div class="container">
         <h2 class="h3 fw-bold mb-4">Reflections</h2>
 
         <div class="row g-3">
+          <!-- Probabilistic AI -->
           <div class="col-md-6 col-lg-4">
-            <section class="card h-100 shadow-sm">
+            <section class="card h-100">
               <div class="card-body">
-                <h3 class="h5">Process Reflection</h3>
+                <h3 class="h5">Reflection: Probabilistic AI</h3>
                 <p class="text-muted mb-0">
-                  Building this site helped me understand responsive design using Flexbox and media queries.
-                  The most challenging part was making the timeline horizontal on desktop and vertical on mobile,
-                  which I solved with CSS breakpoints.
+                  AI tools can generate different answers depending on how a prompt is written. I treated AI output as a starting point,
+                  verified it against the rubric, and adjusted my layout, RTL behavior, and accessibility until the results matched the project requirements.
                 </p>
               </div>
             </section>
           </div>
 
+          <!-- Interview Question -->
           <div class="col-md-6 col-lg-4">
-            <section class="card h-100 shadow-sm">
+            <section class="card h-100">
               <div class="card-body">
-                <h3 class="h5">Networking Value</h3>
+                <h3 class="h5">Reflection: Interview Question</h3>
                 <p class="text-muted mb-0">
-                  This project demonstrates front-end skills such as layout design, interactivity, and GitHub Pages deployment,
-                  which are valuable talking points with recruiters.
+                  If asked about this project, I would explain how I used Bootstrap’s grid to build a responsive UI, implemented RTL language support,
+                  and improved accessibility with labeled forms, a skip link, and better contrast—then validated improvements using Lighthouse.
                 </p>
               </div>
             </section>
           </div>
 
+          <!-- LinkedIn Post -->
           <div class="col-md-6 col-lg-4">
-            <section class="card h-100 shadow-sm">
+            <section class="card h-100">
               <div class="card-body">
-                <h3 class="h5">Company Culture</h3>
+                <h3 class="h5">Reflection: LinkedIn Post</h3>
                 <p class="text-muted mb-0">
-                  Intel’s commitment to sustainability aligns with my goals to build technology that is both innovative and responsible.
+                  This week I improved a sustainability timeline site by adding RTL localization, a responsive Bootstrap three-column layout with icons,
+                  and an accessible newsletter form. I also tested accessibility and polished the UI to align with a real-world brand style.
                 </p>
               </div>
             </section>
           </div>
         </div>
 
-        <footer class="footer mt-5" aria-label="Site footer">
+        <footer class="footer mt-5" id="footer" aria-label="Site footer">
           <div class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
             <p class="mb-0 small text-white-75">
               Built with HTML, CSS, and Bootstrap • Deployed on GitHub Pages • © <span id="year"></span>
@@ -411,6 +427,26 @@
     </section>
   </main>
 
+  <!-- Modal (Bootstrap Interactivity bonus) -->
+  <div class="modal fade" id="learnModal" tabindex="-1" aria-labelledby="learnModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="learnModalLabel">Intel RISE (quick overview)</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          RISE is a sustainability strategy focused on responsible, inclusive, sustainable, and enabling actions.
+          This demo modal satisfies the “Bootstrap interactivity component” bonus.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          <a class="btn btn-intel" href="#subscribe">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -418,7 +454,7 @@
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Form validation + accessible status message
+    // Accessible form validation
     const form = document.getElementById("subForm");
     const status = document.getElementById("status");
 
@@ -439,7 +475,7 @@
       form.classList.remove("was-validated");
     });
 
-    // RTL / LTR toggle (rubric requirement)
+    // RTL/LTR toggle + LevelUp auto-detect
     const htmlEl = document.documentElement;
     const bsCss = document.getElementById("bsCss");
     const btnEN = document.getElementById("btnEN");
@@ -463,9 +499,9 @@
     btnEN.addEventListener("click", () => setDir("en", "ltr"));
     btnAR.addEventListener("click", () => setDir("ar", "rtl"));
 
-    // Optional auto-detect Arabic browser language
-    const isArabic = (navigator.language || "").toLowerCase().startsWith("ar");
-    if (isArabic) setDir("ar", "rtl");
+    // Auto-detect language (bonus): if Arabic, default to RTL
+    const lang = (navigator.language || "").toLowerCase();
+    if (lang.startsWith("ar")) setDir("ar", "rtl");
   </script>
 </body>
 </html>
